@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -6,21 +7,70 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: rgba(255, 255, 255, 1);
+  --color-foreground: rgba(248, 248, 248, 1);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: rgba(238, 111, 75, 1);
+  --color-text: rgba(22, 23, 35, 1);
+  --color-text-light: rgba(66, 65, 83, 1);
+    --font-inter-tight: "Inter Tight", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: rgba(255, 255, 255, 1);
+    --foreground: rgba(248, 248, 248, 1);
   }
+}
+
+
+
+@layer base {
+  h2 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 120%;
+    letter-spacing: 0.25px;
+    color: var(--color-text);
+    margin: 0px;
+  }
+
+  p {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: var(--color-text-light);
+    margin: 0px !important;
+  }
+  
+}
+
+* {
+
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: "Inter Tight", sans-serif;
+}
+
+@media (min-width: 640px) {
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
